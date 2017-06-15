@@ -1,14 +1,95 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>NewsPaper</title>
   <base href="/">
-
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
+
+  <!-- Owl Carousel Assets -->
+  <link href="assets/owl-carousel/owl.carousel.css" rel="stylesheet">
+  <link href="assets/owl-carousel/owl.theme.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+  <!-- Custom Fonts -->
+  <link rel="stylesheet" href="assets/font-awesome-4.4.0/css/font-awesome.min.css" type="text/css">
+
+  <!-- jQuery and Modernizr-->
+  <script src="assets/js/jquery-2.1.1.js"></script>
+
+  <!-- Core JavaScript Files -->
+  <script src="assets/js/bootstrap.min.js"></script>
 </head>
+
 <body>
   <app-root></app-root>
+
+
+
+  <!-- JS -->
+  <script src="assets/owl-carousel/owl.carousel.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#owl-demo-1").owlCarousel({
+        autoPlay: 3000,
+        items: 1,
+        itemsDesktop: [1199, 1],
+        itemsDesktopSmall: [400, 1]
+      });
+      $("#owl-demo-2").owlCarousel({
+        autoPlay: 3000,
+        items: 3,
+
+      });
+    });
+  </script>
+
+
+  <script type="text/javascript" src="assets/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+  <script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+      //language:  'fr',
+      weekStart: 1,
+      todayBtn: 1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      forceParse: 0,
+      showMeridian: 1
+    });
+    $('.form_date').datetimepicker({
+      language: 'fr',
+      weekStart: 1,
+      todayBtn: 1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 2,
+      minView: 2,
+      forceParse: 0
+    });
+    $('.form_time').datetimepicker({
+      language: 'fr',
+      weekStart: 1,
+      todayBtn: 1,
+      autoclose: 1,
+      todayHighlight: 1,
+      startView: 1,
+      minView: 0,
+      maxView: 1,
+      forceParse: 0
+    });
+
+  </script>
 </body>
+
 </html>
