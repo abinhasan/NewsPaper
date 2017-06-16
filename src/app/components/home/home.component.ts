@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
 posts: any;
 vedioPosts: any;
+topViewPosts: any;
 
   constructor(
     public afAuth: AngularFireAuth,
@@ -23,11 +24,20 @@ vedioPosts: any;
 
     this.firebaseService.getPosts().subscribe(posts => {
       this.posts = posts;
+      //console.log(posts);
     });
 
     this.firebaseService.getVideoPosts().subscribe(vedioPosts => {
       this.vedioPosts = vedioPosts;
       //console.log(vedioPosts);
+    });
+
+    this.firebaseService.getTopViewPosts().subscribe(topViewPosts => {
+      let topView = topViewPosts.sort((n1,n2) => {
+            return n2.view-n1.view;
+          });
+      this.topViewPosts = topView;
+      //console.log(topViewPosts);
     });
   }
 

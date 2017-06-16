@@ -23,6 +23,7 @@ export class SafePipe implements PipeTransform {
   }
 }
 
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'add-post', component: AddPostComponent }

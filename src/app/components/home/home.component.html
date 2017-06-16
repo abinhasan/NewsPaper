@@ -121,50 +121,14 @@
 
 					<!---- Start Widget ---->
 					<div class="widget wid-comment">
-						<div class="heading"><h4>Top Comments</h4></div>
+						<div class="heading"><h4>Top Views</h4></div>
 						<div class="content">
-							<div class="post">
-								<a href="single.html">
-									<img src="assets/images/ava-1.jpg" class="img-circle"/>
+							<div class="post" *ngFor="let top of topViewPosts">
+								<a href="#">
+									<img src="{{top.imageUrl}}" class="img-circle"/>
 								</a>
 								<div class="wrapper">
-									<a href="#"><h5>Curabitur tincidunt porta lorem.</h5></a>
-									<ul class="list-inline">
-										<li><i class="fa fa-calendar"></i>25/3/2015</li> 
-										<li><i class="fa fa-thumbs-up"></i>1,200</li>
-									</ul>
-								</div>
-							</div>
-							<div class="post">
-								<a href="single.html">
-									<img src="assets/images/ava-2.png" class="img-circle"/>
-								</a>
-								<div class="wrapper">
-									<a href="#"><h5>Curabitur tincidunt porta lorem.</h5></a>
-									<ul class="list-inline">
-										<li><i class="fa fa-calendar"></i>25/3/2015</li> 
-										<li><i class="fa fa-thumbs-up"></i>1,200</li>
-									</ul>
-								</div>
-							</div>
-							<div class="post">
-								<a href="single.html">
-									<img src="assets/images/ava-3.jpeg" class="img-circle"/>
-								</a>
-								<div class="wrapper">
-									<a href="#"><h5>Curabitur tincidunt porta lorem.</h5></a>
-									<ul class="list-inline">
-										<li><i class="fa fa-calendar"></i>25/3/2015</li> 
-										<li><i class="fa fa-thumbs-up"></i>1,200</li>
-									</ul>
-								</div>
-							</div>
-							<div class="post">
-								<a href="single.html">
-									<img src="assets/images/ava-4.jpg" class="img-circle"/>
-								</a>
-								<div class="wrapper">
-									<a href="#"><h5>Curabitur tincidunt porta lorem.</h5></a>
+									<a href="#"><h5>{{top.title}}</h5></a>
 									<ul class="list-inline">
 										<li><i class="fa fa-calendar"></i>25/3/2015</li> 
 										<li><i class="fa fa-thumbs-up"></i>1,200</li>

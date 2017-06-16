@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-add-post',
@@ -29,7 +30,8 @@ export class AddPostComponent implements OnInit {
       description: this.description,
       type: this.type,
       imageUrl: this.imageUrl,
-      youtubeUrl: this.youtubeUrl
+      youtubeUrl: this.youtubeUrl,
+      startedAt : firebase.database.ServerValue.TIMESTAMP
     }
 
     this.firebaseService.addpost(post);

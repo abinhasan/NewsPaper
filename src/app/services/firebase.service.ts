@@ -21,8 +21,8 @@ export class FirebaseService {
       {
         query: {
           limitToLast: 12,
-          orderByChild : "youtubeUrl",
-          equalTo : "NA"
+          orderByChild: "youtubeUrl",
+          equalTo: "NA"
         }
       }) as FirebaseListObservable<Post[]>
     return this.posts;
@@ -33,8 +33,22 @@ export class FirebaseService {
       {
         query: {
           limitToLast: 2,
-          orderByChild : "type",
-          equalTo : "ভিডিও"
+          orderByChild: "type",
+          equalTo: "ভিডিও"
+        }
+      }) as FirebaseListObservable<Post[]>
+    return this.posts;
+  }
+
+
+  getTopViewPosts() {
+    this.posts = this.db.list('/posts',
+      {
+        query: {
+          orderByChild: "view",
+          startAt: 1,
+          endAt: 30,
+          limitToFirst : 8
         }
       }) as FirebaseListObservable<Post[]>
     return this.posts;
