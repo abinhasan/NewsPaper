@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 posts: any;
 vedioPosts: any;
 topViewPosts: any;
+hotnews: any;
 
   constructor(
     public afAuth: AngularFireAuth,

@@ -37,23 +37,12 @@
 
 		<div class="col-sm-4">
 			<div id="owl-demo-1" class="owl-carousel">
-				<img src="assets/images/slide-2.jpg" />
-				<div>
-					<img src="assets/images/slide-1.jpg" />
-					<div class="header-text hidden-xs">
-						<div class="col-md-12 text-center">
-							<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-							<br>
-						</div>
-					</div>
-					<!-- /header-text -->
-				</div>
-				<img src="assets/images/slide-3.jpg" />
+				<img src="https://drscdn.500px.org/photo/76204519/q%3D80_m%3D1500/745d3a0677e0922d309f285f5de5a9ab" />
+				<img src="https://c1.staticflickr.com/6/5060/5467344939_72794d488c_b.jpg" />
+				<img src="http://www.abac-bd.com/wp-content/uploads/Tomb-of-Bibi-Pari-Lalbagh-Fort.jpg?x26400" />
 			</div>
-			<a href="#">
-				<img src="https://firebasestorage.googleapis.com/v0/b/news-46134.appspot.com/o/banner.jpg?alt=media&token=00979b61-077f-4cb1-83db-c5a8e911d2fe"
-				/>
-			</a>
+
+			<img src="https://firebasestorage.googleapis.com/v0/b/news-46134.appspot.com/o/banner.png?alt=media&token=8136c8f6-0c97-4b52-96da-8469390b4cd5" />
 		</div>
 	</div>
 </div>
@@ -75,7 +64,7 @@
 								<div class="col-md-3">
 									<img src="{{post.imageUrl}}" />
 									<h3><a href="#">{{post.title}}</a></h3>
-									<span><i class="fa fa-heart"></i> 1,200 <i class="fa fa-eye"></i> 945</span>
+									<span><i class="fa fa-heart"></i> {{post.like}} <i class="fa fa-eye"></i> {{post.view}}</span>
 									<p>{{post.description | slice:0:80}}…...</p>
 								</div>
 							</div>
@@ -99,7 +88,6 @@
 								</div>
 								<h3 class="vid-name"><a href="#">{{v.title}}</a></h3>
 								<div class="info">
-									<h5>By Admin</h5>
 									<span><i class="fa fa-calendar"></i>25/3/2015</span>
 									<span><i class="fa fa-heart"></i>1,200</span>
 								</div>

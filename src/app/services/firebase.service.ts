@@ -7,13 +7,30 @@ export class FirebaseService {
 
   posts: FirebaseListObservable<any[]>;
 
+  hotnews: FirebaseListObservable<any[]>;
+
   constructor(private db: AngularFireDatabase) {
     this.posts = db.list('/posts');
+    this.hotnews = db.list('/hotnews');
+  }
+
+
+  getHotNews() {
+    this.hotnews = this.db.list('/hotnews',
+      {
+        query: {
+          //orderByChild: "startedAt",
+          limitToLast : 3
+        }
+      }) as FirebaseListObservable<Post[]>
+    return this.hotnews;
   }
 
   addpost(post) {
-    return this.posts.push(post);
+    //return this.posts.push(post);
+    return this.hotnews.push(post);
   }
+
 
 
   getPosts() {
