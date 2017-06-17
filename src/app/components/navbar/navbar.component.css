@@ -1,0 +1,9 @@
+.marquee-row ul li {
+        float: left;
+        list-style: none;
+        margin: 0 10px 0 5px
+}
+
+.marquee-row ul li a {
+        color: #000;
+}
