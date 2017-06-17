@@ -23,7 +23,12 @@ topViewPosts: any;
   ngOnInit() {
 
     this.firebaseService.getPosts().subscribe(posts => {
-      this.posts = posts;
+
+      let data = posts.sort((n1,n2) => {
+        return n2.startedAt - n1.startedAt;
+      });
+
+      this.posts = data;
       //console.log(posts);
     });
 
