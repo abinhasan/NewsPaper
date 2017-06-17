@@ -3,10 +3,15 @@
   <nav id="top">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
           <strong>Welcome to Us!</strong>
         </div>
-        <div class="col-md-6">
+        
+        <div class="col-md-2">
+          <strong>{{ today | date:'fullDate' }}</strong>
+        </div>
+
+        <div class="col-md-5">
           <ul class="list-inline top-link link">
             <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
             <li><a href="contact.html"><i class="fa fa-comments"></i> Contact</a></li>
@@ -17,7 +22,6 @@
     </div>
   </nav>
 
-<div> DATE : {{ today | date:'fullDate' }} </div>
 
 <div class="navbar container marquee-row">
   <marquee scrollamount="2" scrolldelay="1" behavior="scroll" direction="left">
