@@ -114,15 +114,15 @@
 					<div class="widget wid-comment">
 						<div class="heading"><h4>জনপ্রিয় সংবাদ</h4></div>
 						<div class="content">
-							<div class="post" *ngFor="let top of topViewPosts">
+							<div class="post" *ngFor="let top of topViewArray">
 								<a href="#">
 									<img src="{{top.imageUrl}}" class="img-circle"/>
 								</a>
 								<div class="wrapper">
 									<a href="#"><h5>{{top.title}}</h5></a>
 									<ul class="list-inline">
-										<li><i class="fa fa-calendar"></i>25/3/2015</li> 
-										<li><i class="fa fa-thumbs-up"></i>1,200</li>
+										<li><i class="fa fa-calendar"></i>{{top.startedAt}}</li> 
+										<li><i class="fa fa-thumbs-up"></i>{{top.like}}</li>
 									</ul>
 								</div>
 							</div>

@@ -21,21 +21,8 @@ export class NavbarComponent implements OnInit {
       let hotdata = hotnews.sort((n1,n2) => {
         return n2.startedAt - n1.startedAt;
       });
-
-      var reportArray = [];
-
-      for (let i in hotdata) {
-        var startedAt = new Date(hotdata[i].startedAt);
-
-        reportArray.push({
-          startedAt : startedAt,
-          title : hotdata[i].title
-          });
-      }
-
-      this.hotnews = reportArray;
-      console.log(reportArray);
-      //this.hotnews = hotdata;
+      
+      this.hotnews = hotdata;
     });
 
   }

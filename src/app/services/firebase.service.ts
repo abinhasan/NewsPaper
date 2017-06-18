@@ -80,4 +80,7 @@ interface Post {
   type?: string;
   imageUrl?: string;
   youtubeUrl?: string;
+  startedAt?: string;
+  view? : number;
+  like? : number;
 }
