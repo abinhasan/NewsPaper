@@ -42,8 +42,9 @@ hotnews: any;
       let topView = topViewPosts.sort((n1,n2) => {
             return n2.view-n1.view;
           });
+
       this.topViewPosts = topView;
-      //console.log(topViewPosts);
+      //console.log(topView[0].title);
     });
   }
 

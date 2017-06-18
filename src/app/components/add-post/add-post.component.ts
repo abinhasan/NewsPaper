@@ -15,6 +15,8 @@ export class AddPostComponent implements OnInit {
   type: any;
   imageUrl: any;
   youtubeUrl: any;
+  view: any;
+  like: any;
 
   constructor(
     private firebaseService: FirebaseService,
@@ -31,6 +33,8 @@ export class AddPostComponent implements OnInit {
       type: this.type,
       imageUrl: this.imageUrl,
       youtubeUrl: this.youtubeUrl,
+      view: this.view,
+      like: this.like,
       startedAt : firebase.database.ServerValue.TIMESTAMP
     }
 
