@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
 
   hotnews: any;
 
-  constructor(
+  constructor (
     private firebaseService: FirebaseService
   ) { }
 
@@ -22,12 +22,20 @@ export class NavbarComponent implements OnInit {
         return n2.startedAt - n1.startedAt;
       });
 
+      var reportArray = [];
+
       for (let i in hotdata) {
         var startedAt = new Date(hotdata[i].startedAt);
-        console.log(startedAt);
+
+        reportArray.push({
+          startedAt : startedAt,
+          title : hotdata[i].title
+          });
       }
 
-      this.hotnews = hotdata;
+      this.hotnews = reportArray;
+      console.log(reportArray);
+      //this.hotnews = hotdata;
     });
 
   }
