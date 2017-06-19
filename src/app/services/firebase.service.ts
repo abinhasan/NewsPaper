@@ -27,8 +27,8 @@ export class FirebaseService {
   }
 
   addpost(post) {
-    //return this.posts.push(post);
-    return this.hotnews.push(post);
+    return this.posts.push(post);
+    //return this.hotnews.push(post);
   }
 
 
@@ -49,7 +49,7 @@ export class FirebaseService {
     this.posts = this.db.list('/posts',
       {
         query: {
-          limitToLast: 2,
+          limitToLast: 3,
           orderByChild: "type",
           equalTo: "ভিডিও"
         }

@@ -12,7 +12,9 @@ import { FirebaseService } from '../../services/firebase.service';
 export class HomeComponent implements OnInit {
 
 posts: any;
+topPostArray: any;
 vedioPosts: any;
+topVedioPostArray: any;
 topViewArray: any;
 hotnews: any;
 
@@ -29,13 +31,56 @@ hotnews: any;
         return n2.startedAt - n1.startedAt;
       });
 
-      this.posts = data;
+      let topPostArray = [];
+
+      for (let i in data) {
+
+        let date = new Date(data[i].startedAt);
+
+        topPostArray.push({
+          key: data[i].$key,
+          title: data[i].title,
+          description: data[i].description,
+          type: data[i].type,
+          imageUrl: data[i].imageUrl,
+          youtubeUrl: data[i].youtubeUrl,
+          view: data[i].view,
+          like: data[i].like,
+          startedAt: date.getDate()  + "/" + (date.getMonth()+1) + "/" + date.getFullYear()
+        });
+      }
+
+      this.topPostArray = topPostArray;
       //console.log(posts);
     });
 
     this.firebaseService.getVideoPosts().subscribe(vedioPosts => {
-      this.vedioPosts = vedioPosts;
-      //console.log(vedioPosts);
+
+      let data = vedioPosts.sort((n1,n2) => {
+        return n2.startedAt - n1.startedAt;
+      });
+
+      let topVedioPostArray = [];
+
+      for (let i in data) {
+
+        let date = new Date(data[i].startedAt);
+
+        topVedioPostArray.push({
+          key: data[i].$key,
+          title: data[i].title,
+          description: data[i].description,
+          type: data[i].type,
+          imageUrl: data[i].imageUrl,
+          youtubeUrl: data[i].youtubeUrl,
+          view: data[i].view,
+          like: data[i].like,
+          startedAt: date.getDate()  + "/" + (date.getMonth()+1) + "/" + date.getFullYear()
+        });
+      }
+
+      this.topVedioPostArray = topVedioPostArray;
+      //console.log(topVedioPostArray);
     });
 
     this.firebaseService.getTopViewPosts().subscribe(topViewPosts => {
