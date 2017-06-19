@@ -27,18 +27,17 @@ export class FirebaseService {
     return this.hotnews;
   }
 
-  addpost(post) {
+  addPost(post) {
     return this.posts.push(post);
-    //console.log(post);
-    //return this.videonews.push(post);
-    //return this.hotnews.push(post);
+  }
+
+  addHotNews(hotNews) {
+    return this.hotnews.push(hotNews);
   }
 
   addvideopost(video) {
-    //return this.posts.push(post);
     console.log(video);
     return this.videonews.push(video);
-    //return this.hotnews.push(post);
   }
 
 

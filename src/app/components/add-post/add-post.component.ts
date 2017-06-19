@@ -37,7 +37,7 @@ export class AddPostComponent implements OnInit {
       startedAt : firebase.database.ServerValue.TIMESTAMP
     }
 
-    this.firebaseService.addpost(post);
+    this.firebaseService.addPost(post);
     this.router.navigate(['/']);
   }
 
@@ -52,6 +52,22 @@ export class AddPostComponent implements OnInit {
     }
 
     this.firebaseService.addvideopost(video);
+    this.router.navigate(['/']);
+  }
+
+
+  onAddHotNewsSubmit() {
+    let hotNews = {
+      title: this.title,
+      description: this.description,
+      type: this.type,
+      imageUrl: this.imageUrl,
+      view: this.view,
+      like: this.like,
+      startedAt : firebase.database.ServerValue.TIMESTAMP
+    }
+
+    this.firebaseService.addHotNews(hotNews);
     this.router.navigate(['/']);
   }
 
