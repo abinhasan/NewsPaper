@@ -36,7 +36,7 @@ export class FirebaseService {
   }
 
   addvideopost(video) {
-    console.log(video);
+    //console.log(video);
     return this.videonews.push(video);
   }
 
@@ -69,7 +69,7 @@ export class FirebaseService {
         query: {
           orderByChild: "view",
           startAt: 1,
-          endAt: 30,
+          endAt: 100,
           limitToFirst : 8
         }
       }) as FirebaseListObservable<Post[]>
