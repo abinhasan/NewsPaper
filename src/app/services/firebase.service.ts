@@ -6,12 +6,13 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 export class FirebaseService {
 
   posts: FirebaseListObservable<any[]>;
-
   hotnews: FirebaseListObservable<any[]>;
+  videonews: FirebaseListObservable<any[]>;
 
   constructor(private db: AngularFireDatabase) {
     this.posts = db.list('/posts');
     this.hotnews = db.list('/hotnews');
+    this.videonews = db.list('/videonews');
   }
 
 
@@ -27,7 +28,9 @@ export class FirebaseService {
   }
 
   addpost(post) {
-    return this.posts.push(post);
+    //return this.posts.push(post);
+    console.log(post);
+    return this.videonews.push(post);
     //return this.hotnews.push(post);
   }
 
