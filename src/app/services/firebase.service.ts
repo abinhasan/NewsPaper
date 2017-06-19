@@ -28,9 +28,16 @@ export class FirebaseService {
   }
 
   addpost(post) {
+    return this.posts.push(post);
+    //console.log(post);
+    //return this.videonews.push(post);
+    //return this.hotnews.push(post);
+  }
+
+  addvideopost(video) {
     //return this.posts.push(post);
-    console.log(post);
-    return this.videonews.push(post);
+    console.log(video);
+    return this.videonews.push(video);
     //return this.hotnews.push(post);
   }
 
@@ -40,21 +47,17 @@ export class FirebaseService {
     this.posts = this.db.list('/posts',
       {
         query: {
-          limitToLast: 12,
-          orderByChild: "youtubeUrl",
-          equalTo: "NA"
+          limitToLast: 12
         }
       }) as FirebaseListObservable<Post[]>
     return this.posts;
   }
 
   getVideoPosts() {
-    this.posts = this.db.list('/posts',
+    this.posts = this.db.list('/videonews',
       {
         query: {
-          limitToLast: 3,
-          orderByChild: "type",
-          equalTo: "ভিডিও"
+          limitToLast: 3
         }
       }) as FirebaseListObservable<Post[]>
     return this.posts;

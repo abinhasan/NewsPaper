@@ -32,13 +32,26 @@ export class AddPostComponent implements OnInit {
       description: this.description,
       type: this.type,
       imageUrl: this.imageUrl,
-      youtubeUrl: this.youtubeUrl,
       view: this.view,
       like: this.like,
       startedAt : firebase.database.ServerValue.TIMESTAMP
     }
 
     this.firebaseService.addpost(post);
+    this.router.navigate(['/']);
+  }
+
+  onAddVideoSubmit() {
+    let video = {
+      title: this.title,
+      type: this.type,
+      youtubeUrl: this.youtubeUrl,
+      view: this.view,
+      like: this.like,
+      startedAt : firebase.database.ServerValue.TIMESTAMP
+    }
+
+    this.firebaseService.addvideopost(video);
     this.router.navigate(['/']);
   }
 

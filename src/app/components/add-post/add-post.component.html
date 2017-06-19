@@ -20,7 +20,6 @@
       <option value="খেলা">খেলা</option>
       <option value="বিনোদন">বিনোদন</option>
       <option value="বিজ্ঞান ও প্রযুক্তি">বিজ্ঞান ও প্রযুক্তি</option>
-      <option value="ভিডিও">ভিডিও</option>
     </select>
   </div>
 
@@ -29,12 +28,7 @@
     <input  type="text" [(ngModel)]="imageUrl" name="imageUrl" required>
   </div>
 
-  <div >
-    <label>Youtube Link</label>
-    <input  type="text" [(ngModel)]="youtubeUrl" name="youtubeUrl" required>
-  </div>
-
-  <div >
+  <div>
     <label>View</label>
     <input  type="text" [(ngModel)]="view" name="view" required>
   </div>
@@ -46,3 +40,38 @@
 
   <input type="submit" value="submit" class="btn btn-success">
 </form>
+
+<div>
+  <h2>Add Video Post</h2>
+  <form (submit)="onAddVideoSubmit()">
+
+    <div>
+      <label>Title</label>
+      <input type="text" [(ngModel)]="title" name="title" required>
+    </div>
+
+    <div>
+      <label>Type</label>
+      <select type="text" [(ngModel)]="type" name="type" required>
+      <option value="ভিডিও">ভিডিও</option>
+    </select>
+    </div>
+
+    <div>
+      <label>Youtube Link</label>
+      <input type="text" [(ngModel)]="youtubeUrl" name="youtubeUrl" required>
+    </div>
+
+    <div>
+      <label>View</label>
+      <input type="text" [(ngModel)]="view" name="view" required>
+    </div>
+
+    <div>
+      <label>Like</label>
+      <input type="text" [(ngModel)]="like" name="like" required>
+    </div>
+
+    <input type="submit" value="submit" class="btn btn-success">
+  </form>
+</div>

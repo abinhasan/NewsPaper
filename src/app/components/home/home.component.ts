@@ -13,8 +13,8 @@ export class HomeComponent implements OnInit {
 
 posts: any;
 topPostArray: any;
-vedioPosts: any;
-topVedioPostArray: any;
+VideoPosts: any;
+topVideoPostArray: any;
 topViewArray: any;
 hotnews: any;
 
@@ -54,19 +54,19 @@ hotnews: any;
       //console.log(posts);
     });
 
-    this.firebaseService.getVideoPosts().subscribe(vedioPosts => {
+    this.firebaseService.getVideoPosts().subscribe(VideoPosts => {
 
-      let data = vedioPosts.sort((n1,n2) => {
+      let data = VideoPosts.sort((n1,n2) => {
         return n2.startedAt - n1.startedAt;
       });
 
-      let topVedioPostArray = [];
+      let topVideoPostArray = [];
 
       for (let i in data) {
 
         let date = new Date(data[i].startedAt);
 
-        topVedioPostArray.push({
+        topVideoPostArray.push({
           key: data[i].$key,
           title: data[i].title,
           description: data[i].description,
@@ -79,8 +79,8 @@ hotnews: any;
         });
       }
 
-      this.topVedioPostArray = topVedioPostArray;
-      //console.log(topVedioPostArray);
+      this.topVideoPostArray = topVideoPostArray;
+      console.log(topVideoPostArray);
     });
 
     this.firebaseService.getTopViewPosts().subscribe(topViewPosts => {
