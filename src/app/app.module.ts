@@ -14,6 +14,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
+import { DetailsPostComponent } from './components/details-post/details-post.component';
 
 @Pipe({ name: 'safe' })
 export class SafePipe implements PipeTransform {
@@ -26,7 +27,8 @@ export class SafePipe implements PipeTransform {
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'add-post', component: AddPostComponent }
+  { path: 'add-post', component: AddPostComponent },
+  { path: 'post/:id', component: DetailsPostComponent },
 ]
 
 @NgModule({
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     HomeComponent,
     FooterComponent,
     AddPostComponent,
-    SafePipe
+    SafePipe,
+    DetailsPostComponent
   ],
   imports: [
     BrowserModule,

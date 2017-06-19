@@ -9,6 +9,8 @@ export class FirebaseService {
   hotnews: FirebaseListObservable<any[]>;
   videonews: FirebaseListObservable<any[]>;
 
+  post: FirebaseObjectObservable<any[]>;
+
   constructor(private db: AngularFireDatabase) {
     this.posts = db.list('/posts');
     this.hotnews = db.list('/hotnews');
@@ -39,8 +41,6 @@ export class FirebaseService {
     //console.log(video);
     return this.videonews.push(video);
   }
-
-
 
   getPosts() {
     this.posts = this.db.list('/posts',
@@ -74,6 +74,11 @@ export class FirebaseService {
         }
       }) as FirebaseListObservable<Post[]>
     return this.posts;
+  }
+
+    getPostDetails(id) {
+    this.post = this.db.object('/posts/' + id) as FirebaseObjectObservable<Post>
+    return this.post;
   }
 
 }

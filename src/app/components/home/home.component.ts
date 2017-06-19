@@ -80,7 +80,7 @@ hotnews: any;
       }
 
       this.topVideoPostArray = topVideoPostArray;
-      console.log(topVideoPostArray);
+      //console.log(topVideoPostArray);
     });
 
     this.firebaseService.getTopViewPosts().subscribe(topViewPosts => {
