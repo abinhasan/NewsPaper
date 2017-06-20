@@ -2,14 +2,16 @@
   <div class="row">
     <div id="main-content" class="col-md-12">
       <div class="box" *ngIf="post">
-        <div class="wrap-vid">
+        <div class="wrap-vid text-center">
           <img src="{{post.imageUrl}}" />
         </div>
         
         <h1 class="vid-name"><a href="#">{{post.title}}</a></h1>
         <div class="info">
+          <h5>বিভাগ : <a href="#">{{post.type}}</a></h5>
           <span><i class="fa fa-calendar"></i>{{post.startedAt}}</span>
           <span><i class="fa fa-heart"></i>{{post.like}}</span>
+          <span><i class="fa fa-eye"></i> {{post.view}}</span>
         </div>
         <p style="margin-top: 20px">{{post.description}}</p>
       </div>

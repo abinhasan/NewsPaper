@@ -25,10 +25,26 @@ export class DetailsPostComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
 
     this.firebaseService.getPostDetails(this.id).subscribe(post => {
-      this.post = post;
-      console.log(post);
+      // let title = post["title"];
+      // let description = post["description"];
+      // let imageUrl = post["imageUrl"];
+      // let like = post["like"];
+      // let view = post["view"];
+      // let type = post["type"];
+      let date = new Date(post["startedAt"]);
 
-      // @TODO -Storage ref
+      let customPost = {
+        key: post["$key"],
+        title: post["title"],
+        description: post["description"],
+        imageUrl: post["imageUrl"],
+        like: post["like"],
+        view: post["view"],
+        type: post["type"],
+        startedAt: date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
+      };
+      this.post = customPost;
+      //console.log(customPost);
     });
   }
 
