@@ -87,6 +87,12 @@ export class FirebaseService {
     return this.video;
   }
 
+
+  getAllPosts() {
+    this.posts = this.db.list('/posts') as FirebaseListObservable<Post[]>
+    return this.posts;
+  }
+
 }
 
 interface Post {
