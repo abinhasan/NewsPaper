@@ -1,0 +1,20 @@
+<div id="page-content" class="single-page container">
+  <div class="row">
+    <div id="main-content" class="col-md-12">
+      <div class="box" *ngIf="video">
+        <div class="wrap-vid">
+          <iframe width="100%" height="500" frameborder="0" allowfullscreen 
+										[src]="('https://www.youtube.com/embed/' + video.youtubeUrl) | safe"></iframe>
+        </div>
+        <div class="line"></div>
+        <h1 class="vid-name"><a href="#">{{video.title}}</a></h1>
+        <div class="info">
+          <h5>বিভাগ : {{video.type}}</h5>
+          <span><i class="fa fa-calendar"></i>{{video.startedAt}}</span>
+          <span><i class="fa fa-heart"></i>{{video.like}}</span>
+          <span><i class="fa fa-eye"></i>{{video.view}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
