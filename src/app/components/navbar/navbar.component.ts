@@ -19,7 +19,9 @@ export class NavbarComponent implements OnInit {
     private firebaseService: FirebaseService,
     public afAuth: AngularFireAuth,
     public flashMessage: FlashMessagesService
-  ) { }
+  ) {
+    this.user = afAuth.authState;
+   }
 
   ngOnInit() {
 
@@ -41,7 +43,7 @@ export class NavbarComponent implements OnInit {
   logout() {
     this.afAuth.auth.signOut();
     this.flashMessage.show('You are logged out',
-      { cssClass: 'alert-success', timeout: 3000 }
+      { cssClass: 'alert-danger', timeout: 3000 }
     );
   }
 
