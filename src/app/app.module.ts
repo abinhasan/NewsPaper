@@ -17,6 +17,7 @@ import { AddPostComponent } from './components/add-post/add-post.component';
 import { DetailsPostComponent } from './components/details-post/details-post.component';
 import { DetailsVideoComponent } from './components/details-video/details-video.component';
 import { AllPostComponent } from './components/all-post/all-post.component';
+import { AllVideoComponent } from './components/all-video/all-video.component';
 
 @Pipe({ name: 'safe' })
 export class SafePipe implements PipeTransform {
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     SafePipe,
     DetailsPostComponent,
     DetailsVideoComponent,
-    AllPostComponent
+    AllPostComponent,
+    AllVideoComponent
   ],
   imports: [
     BrowserModule,
