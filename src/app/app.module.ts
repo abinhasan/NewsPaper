@@ -33,7 +33,8 @@ const appRoutes: Routes = [
   { path: 'add-post', component: AddPostComponent },
   { path: 'news/:id', component: DetailsPostComponent },
   { path: 'video/:id', component: DetailsVideoComponent },
-  { path: 'allnews', component: AllPostComponent }
+  { path: 'allnews', component: AllPostComponent },
+  { path: 'allvideos', component: AllVideoComponent }
 ]
 
 @NgModule({

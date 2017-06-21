@@ -104,12 +104,11 @@
 										[src]="('https://www.youtube.com/embed/' + video.youtubeUrl) | safe"></iframe>
 									<h5 class="vid-name"><a [routerLink]="['/video/'+video.key]">{{video.title}}</a></h5>
 									<br>
-								</div>
-								
+								</div>								
 							</div>
 						</div>
 						<div class="text-center">
-							<button type="button" class="btn btn-lg btn-success">আরও ভিডিও</button>
+							<a [routerLink]="['/allvideos']" type="button" class="btn btn-lg btn-success">আরও ভিডিও</a>
 						</div>
 					</div>
 				</div>
