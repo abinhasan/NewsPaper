@@ -42,7 +42,7 @@
     <div class="navbar-header">
       <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
       <a class="navbar-brand" [routerLink]="['/']">
-        <div class="logo"><span>Newspaper</span></div>
+        <div class="logo"><span>BanglaNews</span></div>
       </a>
     </div>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -52,7 +52,7 @@
         <li><a href="#">বিনোদন</a></li>
         <li><a href="#">বিজ্ঞান ও প্রযুক্তি</a></li>
         <li><a href="#">ভিডিও</a></li>
-        <li *ngIf="!(user | async)"><a [routerLink]="['/']" (click)="login()">লগইন করুন</a></li>
+        <li *ngIf="!(user | async)"><a [routerLink]="['/']" (click)="login()">লগইন</a></li>
 
         <li class="dropdown"  *ngIf="(user | async)">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
