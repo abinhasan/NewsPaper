@@ -43,7 +43,7 @@ export class NavbarComponent implements OnInit {
   logout() {
     this.afAuth.auth.signOut();
     this.flashMessage.show('You are logged out',
-      { cssClass: 'alert-danger', timeout: 3000 }
+      { cssClass: 'alert-success', timeout: 3000 }
     );
   }
 

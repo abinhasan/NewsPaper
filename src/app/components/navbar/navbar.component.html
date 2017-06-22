@@ -52,17 +52,17 @@
         <li><a href="#">বিনোদন</a></li>
         <li><a href="#">বিজ্ঞান ও প্রযুক্তি</a></li>
         <li><a href="#">ভিডিও</a></li>
+        <li *ngIf="!(user | async)"><a [routerLink]="['/']" (click)="login()">লগইন করুন</a></li>
 
-        <li class="dropdown">
+        <li class="dropdown"  *ngIf="(user | async)">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             Account <i class="fa fa-arrow-circle-o-down"></i>
           </a>
           <div class="dropdown-menu">
             <div class="dropdown-inner">
               <ul class="list-unstyled">
-                <li *ngIf="!(user | async)"><a [routerLink]="['/']" (click)="login()">Login</a></li>
-                <li *ngIf="(user | async)"><a [routerLink]="['/']" (click)="logout()">Logout</a></li>
-                <li *ngIf="(user | async)"><a [routerLink]="['/add-post']">Add Post</a></li>
+                <li><a [routerLink]="['/']" (click)="logout()">Logout</a></li>
+                <li><a [routerLink]="['/add-post']">Add Post</a></li>
               </ul>
             </div>
           </div>
